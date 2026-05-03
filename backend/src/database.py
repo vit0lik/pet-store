@@ -5,11 +5,12 @@ from .config import settings
 
 engine = create_engine(
     settings.database_url,
-    connnect_args={"check_same_thread" : False}
+    connect_args={"check_same_thread": False}
 )
 
-SessionLocal= sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
+
 
 def get_db():
     db = SessionLocal()
@@ -17,6 +18,7 @@ def get_db():
         yield db
     finally:
         db.close()
-        
+
+
 def init_db():
-    Base.metabase.create_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
