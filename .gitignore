@@ -1,0 +1,26 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Python (байт-код)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Настройки среды (Environment)
+.env
+.flaskenv
+
+# Базы данных (SQLite)
+# Скрываем локальную БД, чтобы она не попала в репозиторий
+*.sqlite3
+store_db
+
+# IDE (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Логи и временные файлы
+*.log
+.DS_Store
